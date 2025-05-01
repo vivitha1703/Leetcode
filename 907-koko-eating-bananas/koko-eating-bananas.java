@@ -5,10 +5,10 @@ class Solution {
             end = Math.max(end,piles[i]);
         }
         while(start<end){
-            int mid = start+(end-start)/2;
+            int mid = (start+end)/2;
             int sum = 0;
             for(int i=0;i<piles.length;i++){
-                sum += (piles[i] + mid - 1) / mid;
+                sum += Math.ceil((double)piles[i]/(double)mid);
             }
             System.out.println(sum+" "+mid+" "+start+" "+end);
             if(sum<=h){
