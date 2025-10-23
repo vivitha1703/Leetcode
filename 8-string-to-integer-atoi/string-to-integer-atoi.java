@@ -16,14 +16,13 @@ class Solution {
             }
             else{
                 result = result*10+(Character.getNumericValue(strArr[i]));
-            }
-            if(!negative && result>Integer.MAX_VALUE){
-                return Integer.MAX_VALUE;
-            }
-            if(negative && -result<Integer.MIN_VALUE){
-                return Integer.MIN_VALUE;
-            }
-            
+                if(!negative && result>Integer.MAX_VALUE){
+                    return Integer.MAX_VALUE;
+                }
+                if(negative && -result<Integer.MIN_VALUE){
+                    return Integer.MIN_VALUE;
+                }
+            }    
         }
         if(negative) result = -result;
         return (int)result;
