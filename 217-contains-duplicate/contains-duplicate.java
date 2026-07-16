@@ -3,11 +3,9 @@ class Solution {
         int duplicateLength = nums.length;
         HashSet<Integer> set = new HashSet<>();
         for(int i=0;i<nums.length;i++){
-            set.add(nums[i]);
-        }
-        int noDuplicateLength = set.size();
-        if(duplicateLength!=noDuplicateLength){
-            return true;
+            if(set.add(nums[i]) == false){
+                return true;
+            } 
         }
         return false;
     }
