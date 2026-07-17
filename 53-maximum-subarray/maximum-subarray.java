@@ -11,7 +11,6 @@ class Solution {
             if(currSum > maxSum){
                 maxSum = currSum;
             }
-            System.out.println(currSum + " " + maxSum);
         }
         return maxSum;
     }
