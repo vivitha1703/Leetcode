@@ -12,13 +12,11 @@ class Solution {
             }
             String freqString = freqStringBuilder.toString();
             if(anagramGroup.containsKey(freqString)){
-                List<String> currAnagramGroup = anagramGroup.get(freqString);
-                currAnagramGroup.add(str);
-                anagramGroup.put(freqString, currAnagramGroup);
+                anagramGroup.get(freqString).add(str);
             } else {
-                List<String> currAnagramGroup = new ArrayList<>();
-                currAnagramGroup.add(str);
-                anagramGroup.put(freqString, currAnagramGroup);
+                List<String> group = new ArrayList<>();
+                group.add(str);
+                anagramGroup.put(freqString, group);
             }
         }
         List<List<String>> result = new ArrayList<>(anagramGroup.values());
