@@ -4,22 +4,16 @@ class Solution {
         for(String str:strs){
             int[] freqArr = new int[26];
             for(char ch:str.toCharArray()){
-                freqArr[ch-'a'] += 1;
+                freqArr[ch-'a']++;
             }
             StringBuilder freqStringBuilder = new StringBuilder();
             for(int freq:freqArr){
                 freqStringBuilder.append(freq).append("#");
             }
             String freqString = freqStringBuilder.toString();
-            if(anagramGroup.containsKey(freqString)){
-                anagramGroup.get(freqString).add(str);
-            } else {
-                List<String> group = new ArrayList<>();
-                group.add(str);
-                anagramGroup.put(freqString, group);
-            }
+            anagramGroup.putIfAbsent(freqString,new ArrayList<>());
+            anagramGroup.get(freqString).add(str);
         }
-        List<List<String>> result = new ArrayList<>(anagramGroup.values());
-        return result;
+        return new ArrayList<>(anagramGroup.values());
     }
 }
