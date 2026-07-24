@@ -3,12 +3,9 @@ class Solution {
         int length = s.length();
         int left = 0;
         int right = length-1;
-        while(left<length && right>=0 && left<right){
-            while(left<length && !Character.isLetterOrDigit(s.charAt(left))) left++;
-            while(right>=0 && !Character.isLetterOrDigit(s.charAt(right))) right--;
-            if(left>right){
-                break;
-            }
+        while(left<right){
+            while(left<right && !Character.isLetterOrDigit(s.charAt(left))) left++;
+            while(left<right && !Character.isLetterOrDigit(s.charAt(right))) right--;
             char leftChar = Character.toLowerCase(s.charAt(left));
             char rightChar = Character.toLowerCase(s.charAt(right));
             if(leftChar != rightChar){
