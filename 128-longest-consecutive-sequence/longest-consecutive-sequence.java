@@ -15,9 +15,7 @@ class Solution {
                 currLength=1;
             }
         }
-        // if(nums[n-2]==nums[n-1]-1){
-             maxLength = Math.max(currLength,maxLength);
-        // }
+        maxLength = Math.max(currLength,maxLength);
         return maxLength;
     }
 }
