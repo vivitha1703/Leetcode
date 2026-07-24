@@ -9,10 +9,11 @@ class Solution {
             set.add(num);
         }
         for(int num:set){
+            int currNum = num;
             if(!set.contains(num-1)){
-                while(set.contains(num+1)){
+                while(set.contains(currNum+1)){
                     currLength++;
-                    num++;
+                    currNum++;
                 }
                 maxLength = Math.max(maxLength,currLength);
                 currLength = 1;
