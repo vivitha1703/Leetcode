@@ -15,9 +15,6 @@ class Solution {
                 }
             }
         }
-        // if(secondMax==-1){
-        //     secondMax = firstMax;
-        // }
         return secondMax;
     }
 }
