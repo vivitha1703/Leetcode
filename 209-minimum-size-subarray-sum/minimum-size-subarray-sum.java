@@ -4,14 +4,9 @@ class Solution {
         while(right<nums.length){
             currSum += nums[right];
             while(currSum>=target){
-                //while(currSum==target){
-                    System.out.println(currSum + " | "+nums[left]+" "+nums[right]);
-                    minLength = Math.min(minLength, (right-left+1));
-                    currSum -= nums[left];
-                    left++;
-                //}
-                //currSum -= nums[left];
-                //left++;
+                minLength = Math.min(minLength, (right-left+1));
+                currSum -= nums[left];
+                left++;
             }
             right++; 
         }   
